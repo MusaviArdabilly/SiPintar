@@ -86,9 +86,9 @@ $db['default'] = array(
         
         //'hostname' => '118.97.221.219',
         //               'port' => '3333',
-        'username' => 'sipintar_sipinta',
-        'password' => 'databasegue157?',
-        'database' => 'sipintar_12345',
+        'username' => 'root',
+        'password' => '',
+        'database' => 'sipintar',
                        
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
