@@ -37,9 +37,47 @@ class N_perdagangan_bps extends CI_Controller {
 //                }
 //                $data['data_pie']['nilaipie'] = $nilaipie;
                 
+                //buat dropdown tahun 10 tahun kebelakang dari sekarang
+                //select default ke tahun sekarang
+                //ambil data dari dropdown ke controller
+
+                $datenow = date('Y', strtotime('-1 year'));
+                
+                $result = $this->M_graph->getNeracaBps($datenow);
+                
+                $data['pie1'] = $result;
+                
+                $result2 = $this->M_graph->getNeracaBps($datenow);
+                $data['bar'] = $result2;
+                
+                $result3 = $this->M_graph->getNegEksporBps($datenow);
+                $data['barNegaraEkspor'] = $result3;
+                
+                $result4 = $this->M_graph->getNegImporBps($datenow);
+                $data['barNegaraImpor'] = $result4;
                 
                 
-                $datenow =  date("Y");
+                $result5 = $this->M_graph->getKomoEksporBps($datenow);
+                $data['barKomoditiEkspor'] = $result5;
+                
+                $result6 = $this->M_graph->getKomoImporBps($datenow);
+                $data['barKomoditiImpor'] = $result6;
+                
+                $data['lastmonth'] = $this->M_graph->getBulanBPS($datenow);
+                $data['lastmonthI'] = $this->M_graph->getBulanBPSI($datenow);
+                
+                $data['komolastmonth'] = $this->M_graph->getBulanKomoBPS($datenow);
+                $data['komolastmonthI'] = $this->M_graph->getBulanKomoBPSI($datenow);
+                $data['neracamonth'] = $this->M_graph->getBulanBPSNeraca($datenow);
+                
+		$this->load->view('n_perdagangan_bps',$data);
+	}
+
+    public function dataByYear($selectedYear){
+                // $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                // $selectedYear = substr($link, 4);
+
+                $datenow = $selectedYear;
                 
                 $result = $this->M_graph->getNeracaBps($datenow);
                 

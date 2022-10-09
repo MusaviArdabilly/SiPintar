@@ -58,6 +58,35 @@
                 </div>
             </div>
         </div>
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="h3">Pilih Tahun Untuk Ditampilkan</div>
+                    <!-- <?php 
+                    echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                    ?> -->
+                    <br>
+                    <div class="btn-group text-center">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tahun
+                        </button>
+                        <div class="dropdown-menu w-50">
+                            <a class="dropdown-item" href="<?= site_url('N_perdagangan_bps/dataByYear/'.date('Y')) ?>"><?php echo date("Y") ?></a>
+                            <a class="dropdown-item" href="<?= site_url('N_perdagangan_bps/dataByYear/'.date('Y', strtotime('-1 year'))) ?>"><?php echo date('Y', strtotime('-1 year')) ?></a>
+                            <a class="dropdown-item" href="<?= site_url('N_perdagangan_bps/dataByYear/'.date('Y', strtotime('-2 year'))) ?>"><?php echo date('Y', strtotime('-2 year')) ?></a>
+                            <a class="dropdown-item" href="<?= site_url('N_perdagangan_bps/dataByYear/'.date('Y', strtotime('-3 year'))) ?>"><?php echo date('Y', strtotime('-3 year')) ?></a>
+                            <a class="dropdown-item" href="<?= site_url('N_perdagangan_bps/dataByYear/'.date('Y', strtotime('-4 year'))) ?>"><?php echo date('Y', strtotime('-4 year')) ?></a>
+                            <a class="dropdown-item" href="<?= site_url('N_perdagangan_bps/dataByYear/'.date('Y', strtotime('-5 year'))) ?>"><?php echo date('Y', strtotime('-5 year')) ?></a>
+                            <a class="dropdown-item" href="<?= site_url('N_perdagangan_bps/dataByYear/'.date('Y', strtotime('-6 year'))) ?>"><?php echo date('Y', strtotime('-6 year')) ?></a>
+                            <a class="dropdown-item" href="<?= site_url('N_perdagangan_bps/dataByYear/'.date('Y', strtotime('-7 year'))) ?>"><?php echo date('Y', strtotime('-7 year')) ?></a>
+                            <a class="dropdown-item" href="<?= site_url('N_perdagangan_bps/dataByYear/'.date('Y', strtotime('-8 year'))) ?>"><?php echo date('Y', strtotime('-8 year')) ?></a>
+                            <a class="dropdown-item" href="<?= site_url('N_perdagangan_bps/dataByYear/'.date('Y', strtotime('-9 year'))) ?>"><?php echo date('Y', strtotime('-9 year')) ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- End banner Area -->
         <div class="service_area minus_padding">
             <div class="container">
